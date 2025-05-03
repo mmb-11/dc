@@ -23,7 +23,9 @@ for y in sorted(temps):
     smax, smin, c = temps[y]
     avg_max = smax / c
     avg_min = smin / c
-    print(f"{y}: {avg_temps[y]:.2f}°C")
+    avg = (avg_max + avg_min) / 2
+    print(f"{y}: {avg:.2f}°C")
+    
     if avg_max > hot_val: hot, hot_val = y, avg_max
     if avg_min < cool_val: cool, cool_val = y, avg_min
 
